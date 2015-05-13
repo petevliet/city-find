@@ -156,11 +156,8 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.4)
   byebug
   coffee-rails (~> 4.1.0)
-<<<<<<< HEAD
-  flickr.rb (~> 1.2.1)
-=======
   dotenv-rails
->>>>>>> d6222717e43caa42499942de1f880d58622a4c80
+  flickr.rb (~> 1.2.1)
   jbuilder (~> 2.0)
   jquery-rails
   pg
