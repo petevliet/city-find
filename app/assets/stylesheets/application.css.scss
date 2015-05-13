@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 body {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 // section.module:last-child {
@@ -25,7 +25,7 @@ section.module.content {
   padding: 40px 0;
 }
 section.module.parallax {
-  height: 600px;
+  height: 700px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -40,11 +40,19 @@ section.module.parallax h1 {
   text-transform: uppercase;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+section.module.parallax h3 {
+  color: #ecf2f2;
+  font-size: 24px;
+  line-height: 300px;
+  font-weight: 350;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 section.module.parallax-1 {
-  background-image: url("http://upload.wikimedia.org/wikipedia/commons/9/9f/Golden_Gate_Br%C3%BCcke_San_Francisco_CA_USA.jpg");
+  background-image: url("https://c2.staticflickr.com/4/3891/14864581774_0d58b81dbf_k.jpg");
 }
 section.module.parallax-2 {
-  background-image: url("http://upload.wikimedia.org/wikipedia/commons/9/94/Top_of_Rock_Cropped.jpg");
+  background-image: url("https://c1.staticflickr.com/3/2882/13831351534_87e7da91e2_k.jpg");
 }
 
 @media all and (min-width: 600px) {
