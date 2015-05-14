@@ -10,18 +10,19 @@
     <h2>Search</h2>
     <br>
     <div class="form-group">
-  <label class= "col-md-2">
-    Search
-  </label>
-  <div>
-    <label>City</label>
-      <input type="text" name="city" placeholder="ex. Boston"><br />
-      <label class="col-md-offset-2">State</label>
-      <%= render 'state_dropdown' %>
-
-  </div>
-  <button class="btn btn-primary col-md-offset-2">Search</button>
-</div>
+      <label class= "col-md-1">
+        City
+      </label>
+      <input type="text" name="city" placeholder="ex. Boston">
+      <br>
+      <label class="col-md-1">State</label>
+        <%= render 'state_dropdown' %>
+      <br>
+      <br>
+        <button class="btn btn-primary col-md-2 col-md-offset-1">
+          Search
+        </button>
+    </div>
   </div>
 </section>
 
