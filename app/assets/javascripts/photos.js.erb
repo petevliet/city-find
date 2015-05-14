@@ -1,0 +1,36 @@
+$(function() {
+  'use strict';
+
+  // var fKey = 'FLICKR_KEY;
+  // var fSecret = '[FLICKR_SECRET]';
+
+  var getPhotos = (function(){
+   function cityPhotos(){
+     var key = '<%= ENV['FLICKR_KEY'] %>';
+     var secret = '<%= ENV['FLICKR_SECRET'] %>';
+   $('.btn').click(function(){
+     var city = $('input').val();
+     console.log(city);
+     $.ajax({
+       url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + key + '&format=json&nojsoncallback=1&text=' + city + '&sort=relevance',
+       method: 'GET',
+       dataType: 'JSON',
+       success: function(data){
+        //  console.log(data.photos.photo[0]);
+         var pic = data.photos.photo[0];
+         var pic2 = data.photos.photo[1];
+         var picUrl = 'https://farm' + pic.farm + '.staticflickr.com/' + pic.server + '/' + pic.id + '_' + pic.secret + '_b.jpg';
+         var pic2Url = 'https://farm' + pic2.farm + '.staticflickr.com/' + pic2.server + '/' + pic2.id + '_' + pic2.secret + '_b.jpg';
+         $('section.module.parallax-1').css('background-image', 'url(' + picUrl + ')');
+         $('section.module.parallax-2').css('background-image', 'url(' + pic2Url + ')');
+       }
+     });
+   })
+
+  }
+  return {
+    cityPhotos: cityPhotos
+  };
+})();
+  getPhotos.cityPhotos();
+});
