@@ -19,12 +19,12 @@
             <label class="col-md-3">Results Per Page</label>
             <%= render 'rPP' %>
             <label class="col-md-3">Sort By</label>
-            <%= render 'sort_by' %> 
+            <%= render 'sort_by' %>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="search">Search</button>
+        <button type="button" class="btn btn-primary" id="search" onclick="window.location.hash = 'cityResults';"/>Search</button>
       </div>
     </div>
   </div>
