@@ -16,10 +16,14 @@
 //= require_tree .
 
 $(function(){
-  $('#search').click(function(){
+  'use strict';
+  $('#search').on('click', function(){
     weather();
     getPhotos.cityPhotos();
     getFun();
-    $('#modal').modal('toggle');
+  $('input[type="checkbox"]').prop('checked', false);
+  $('input[type="text"],textarea').val(''); 
+  $('select').find('option').prop('selected', false);
+  $('#modal').modal('toggle');
   });
 });
