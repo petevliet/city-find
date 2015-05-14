@@ -16,4 +16,8 @@
 //= require_tree .
 
 $(function(){
-})
+  $('button').click(function(){
+    weather();
+    getPhotos.cityPhotos();
+  });
+});

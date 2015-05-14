@@ -1,14 +1,7 @@
-$(function() {
-  'use strict';
-
-  // var fKey = 'FLICKR_KEY;
-  // var fSecret = '[FLICKR_SECRET]';
-
-  var getPhotos = (function(){
+var getPhotos = (function(){
    function cityPhotos(){
      var key = '<%= ENV['FLICKR_KEY'] %>';
      var secret = '<%= ENV['FLICKR_SECRET'] %>';
-   $('.btn').click(function(){
      var city = $('input').val();
      console.log(city);
      $.ajax({
@@ -25,12 +18,8 @@ $(function() {
          $('section.module.parallax-2').css('background-image', 'url(' + pic2Url + ')');
        }
      });
-   })
-
   }
   return {
     cityPhotos: cityPhotos
   };
 })();
-  getPhotos.cityPhotos();
-});
