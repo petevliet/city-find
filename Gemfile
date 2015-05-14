@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-#flickr  api gem 
+#flickr  api gem
 gem 'flickr.rb', '~> 1.2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'dotenv-rails'
 gem 'bootstrap-sass', '~> 3.3.4'
+
+gem 'yelp', require: 'yelp'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
