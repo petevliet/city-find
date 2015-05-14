@@ -13,13 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require_tree .
+//= require uri.js
+//= require jsonp.js
+//= require_tree
 
 $(function(){
   $('#search').click(function(){
     weather();
     getPhotos.cityPhotos();
-    getFun();
+    getFun.cityFun();
     $('#modal').modal('toggle');
   });
 });

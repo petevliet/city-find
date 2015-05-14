@@ -3,21 +3,28 @@ var getFun = (function(){
   function cityFun(){
     var publisher = '<%= ENV['PUBLISHER_CODE'] %>';
     var city = $('input').val();
-    var state = $('select').val();
+    var state = $('#states').val();
     var location = city+','+state;
-    var rPP = $('select').val();
-    var sortBy = $('select').val();
-
-    $.ajax({
-      //searches type-restaurant
-      //where-pgh,pa, results per page-5,
-      //sort by distance, publisher-id, format-json
-      url: 'https://api.citygridmedia.com/content/places/v2/search/where?type='+ activity +'&where=' + location + '&rpp=' + rPP + '&sort='+ sortBy + '&publisher='+publisher+'&format=json',
+    var rPP = $('#resultsPP').val();
+    var sortByBox = $('#sorter').val();
+    var checkedBoxes = $('.modal-body').find(':checkbox').filter(':checked')
+    var activities = [];
+    $.each(checkedBoxes, function(i, el){
+      var activityVal = $(el).val();
+      activities.push(activityVal);
+    })
+    $.each(activities, function(i, activity){
+    $.jsonp({
+      url: 'http://api.citygridmedia.com/content/places/v2/search/where?what=' + activity + '&where=' + location + '&sort=' + sortByBox + '&publisher=' + publisher + '&format=json',
       method: 'GET',
       dataType: 'JSON',
       success: function(data){
-
+        console.log(data);
       }
-    })
+    });
+  });
   }
-});
+  return {
+    cityFun: cityFun
+  };
+})();
