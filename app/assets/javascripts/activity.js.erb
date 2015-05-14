@@ -3,17 +3,20 @@ var getFun = (function(){
   function cityFun(){
     var publisher = '<%= ENV['PUBLISHER_CODE'] %>';
     var city = $('input').val();
-    var state = $('select').val;
+    var state = $('select').val();
     var location = city+','+state;
+    var rPP = $('select').val();
+    var terms = $('select').val();
+    
     $.ajax({
       //searches type-restaurant
-      //where-pgh,pa, results per page-5, 
+      //where-pgh,pa, results per page-5,
       //sort by distance, publisher-id, format-json
       url: 'https://api.citygridmedia.com/content/places/v2/search/where?type=restaurant&where=Pittsburgh,PA&rpp=5&sort=dist&publisher='+publisher+'&format=json',
       method: 'GET',
       dataType: 'JSON',
       success: function(data){
-        
+
       }
     })
   }
