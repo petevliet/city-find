@@ -16,8 +16,9 @@
 //= require_tree .
 
 $(function(){
-  $('button').click(function(){
+  $('#search').click(function(){
     weather();
     getPhotos.cityPhotos();
+    $('#modal').modal('toggle');
   });
 });
