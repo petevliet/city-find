@@ -19,9 +19,10 @@
 
 $(function(){
   $('#search').click(function(){
-    weather();
+    // weather();
     getPhotos.cityPhotos();
     getFun.cityFun();
     $('#modal').modal('toggle');
+    $('#mainButton').text('Another Search');
   });
 });
