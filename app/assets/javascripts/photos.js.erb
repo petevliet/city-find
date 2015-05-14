@@ -5,10 +5,11 @@ var getPhotos = (function(){
      var secret = '<%= ENV['FLICKR_SECRET'] %>';
      var city = $('input').val();
      $.ajax({
-       url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + key + '&format=json&nojsoncallback=1&text=' + city + '&sort=relevance',
-       method: 'GET',
-       dataType: 'JSON',
-       success: function(data){
+      // url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c2262848b0a4915d49765ca36eed4995&tags='+city+'%2C+skyline&text=-smoke%2C+skyline+&sort=relevance&privacy_filter=&bbox=&accuracy=11&content_type=6&extras=tags%2C+views&format=json&nojsoncallback=1',
+      url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key='+key+'&tags='+city+'&text='+city+'%2C+-smoke%2C+&sort=relevance&privacy_filter=&bbox=&accuracy=11&content_type=6&extras=tags%2C+views&format=json&nojsoncallback=1',
+      method: 'GET',
+      dataType: 'JSON',
+      success: function(data){
          //  variables assigned to two first photos represented in data array
          var pic = data.photos.photo[0];
          var pic2 = data.photos.photo[1];
@@ -21,7 +22,7 @@ var getPhotos = (function(){
          //  name of city is placed over second image
          var thisHere = $('.module.parallax.parallax-2').children();
          $(thisHere[0]).replaceWith('<h1>' + city + '</h1>');
-                }
+        }
      });
   }
   return {
