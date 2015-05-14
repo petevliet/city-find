@@ -8,12 +8,16 @@ var getPhotos = (function(){
        method: 'GET',
        dataType: 'JSON',
        success: function(data){
+         //  variables assigned to two first photos represented in data object
          var pic = data.photos.photo[0];
          var pic2 = data.photos.photo[1];
+         //  variables for URLs for pic and pic2
          var picUrl = 'https://farm' + pic.farm + '.staticflickr.com/' + pic.server + '/' + pic.id + '_' + pic.secret + '_b.jpg';
          var pic2Url = 'https://farm' + pic2.farm + '.staticflickr.com/' + pic2.server + '/' + pic2.id + '_' + pic2.secret + '_b.jpg';
+         //  change background images to pic and pic2
          $('section.module.parallax-1').css('background-image', 'url(' + picUrl + ')');
          $('section.module.parallax-2').css('background-image', 'url(' + pic2Url + ')');
+         //  name of city is placed over second image
          var thisHere = $('.module.parallax.parallax-2').children();
          $(thisHere[0]).append('<h1>' + city + '</h1>');
        }
