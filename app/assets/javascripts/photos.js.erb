@@ -1,8 +1,8 @@
 var getPhotos = (function(){
   'use strict';
    function cityPhotos(){
-     var key = '<%= ENV['FLICKR_KEY'] %>';
-     var secret = '<%= ENV['FLICKR_SECRET'] %>';
+     var key = ENV['FLICKR_KEY'];
+     var secret = ENV['FLICKR_SECRET'];
      var city = $('input').val();
      $.ajax({
        url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + key + '&format=json&nojsoncallback=1&text=' + city + '&sort=relevance',
