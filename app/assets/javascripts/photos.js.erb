@@ -8,7 +8,7 @@ var getPhotos = (function(){
        method: 'GET',
        dataType: 'JSON',
        success: function(data){
-         //  variables assigned to two first photos represented in data object
+         //  variables assigned to two first photos represented in data array
          var pic = data.photos.photo[0];
          var pic2 = data.photos.photo[1];
          //  variables for URLs for pic and pic2
