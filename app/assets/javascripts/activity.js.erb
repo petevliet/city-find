@@ -15,11 +15,11 @@ var getFun = (function(){
     })
     $.each(activities, function(i, activity){
     $.jsonp({
-      url: 'http://api.citygridmedia.com/content/places/v2/search/where?what=' + activity + '&where=' + location + '&sort=' + sortByBox + '&publisher=' + publisher + '&format=json',
+      url: 'http://api.citygridmedia.com/content/places/v2/search/where?what=' + activity + '&where=' + location + '&rpp=' + rPP + '&sort=' + sortByBox + '&publisher=' + publisher + '&format=json',
       method: 'GET',
       dataType: 'JSON',
       success: function(data){
-        console.log(data);
+        console.log(data.results.locations);
       }
     });
   });
