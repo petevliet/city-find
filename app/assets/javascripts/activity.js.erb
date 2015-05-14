@@ -6,13 +6,14 @@ var getFun = (function(){
     var state = $('select').val();
     var location = city+','+state;
     var rPP = $('select').val();
-    var terms = $('select').val();
-    
+    var sortBy = $('select').val();
+    var activity = $()
+
     $.ajax({
       //searches type-restaurant
       //where-pgh,pa, results per page-5,
       //sort by distance, publisher-id, format-json
-      url: 'https://api.citygridmedia.com/content/places/v2/search/where?type=restaurant&where=Pittsburgh,PA&rpp=5&sort=dist&publisher='+publisher+'&format=json',
+      url: 'https://api.citygridmedia.com/content/places/v2/search/where?type='+ activity +'&where=' + location + '&rpp=' + rPP + '&sort='+ sortBy + '&publisher='+publisher+'&format=json',
       method: 'GET',
       dataType: 'JSON',
       success: function(data){
