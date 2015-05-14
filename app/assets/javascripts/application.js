@@ -19,6 +19,7 @@ $(function(){
   $('#search').click(function(){
     weather();
     getPhotos.cityPhotos();
+    getFun();
     $('#modal').modal('toggle');
   });
 });

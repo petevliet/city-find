@@ -1,4 +1,5 @@
 var getPhotos = (function(){
+  'use strict';
    function cityPhotos(){
      var key = '<%= ENV['FLICKR_KEY'] %>';
      var secret = '<%= ENV['FLICKR_SECRET'] %>';
@@ -26,4 +27,5 @@ var getPhotos = (function(){
   return {
     cityPhotos: cityPhotos
   };
+  
 })();
