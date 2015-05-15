@@ -19,15 +19,15 @@ var getFun = (function(){
         method: 'GET',
         dataType: 'JSON',
         success: function(data){
-          $('#weatherRow').append("<div class='col-md-4'><div class='panel panel-info'><div class='panel-heading'>Activities</div><div class='panel-body'><p class='funStuff'></p></div></div></div>");
+          $('#weatherRow').append("<div class='col-md-4'><div class='panel panel-info'><div class='panel-heading'>" + activity + "</div><div class='panel-body'><p class='funStuff'></p></div></div></div>");
           var places = data.results.locations;
           console.log(data);
           $.each(places, function(i, value){
             var categories = value.tags[1].name + ", " + value.tags[0].name;
             if(value.neighborhood === null){value.neighborhood = '';}
             $('.funStuff').append('<p>' + value.name + '</p><p id="small-p">' + value.neighborhood + '</p><p id="small-p">' + categories + '</p><br>');
-      });
-      }
+          });
+        }
     });
   });
   }
