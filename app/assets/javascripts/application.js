@@ -18,10 +18,10 @@
 //= require_tree
 
 $(function(){
-  $('#search').click(function(){
+  $('#searcher').click(function(){
     weather();
-    getPhotos.cityPhotos();
     getFun.cityFun();
+    getPhotos.cityPhotos();
     $('#modal').modal('toggle');
     $('#mainButton').text('Another Search');
   });

@@ -5,7 +5,7 @@ var getPhotos = (function(){
      var secret = '<%= ENV['FLICKR_SECRET'] %>';
      var city = $('input').val();
      $.ajax({
-       url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + key + '&format=json&nojsoncallback=1&text=' + city + '&sort=relevance',
+       url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + key + '&text=' + city + '&sort=relevance&format=json&nojsoncallback=1',
        method: 'GET',
        dataType: 'JSON',
        success: function(data){
