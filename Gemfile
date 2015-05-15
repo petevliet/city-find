@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.0'
 
 #flickr  api gem
 gem 'flickr.rb', '~> 1.2.1'
