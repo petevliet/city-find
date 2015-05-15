@@ -5,9 +5,11 @@ function weather(){
   }
     var city = $('input').val();
     var state = $('select').val();
+    var secret = '<%= ENV['WEATHER_KEY'] %>';
+    var weatherUrl = "http://api.wunderground.com/api/" + secret + "/forecast/q/"+state+"/"+city+".json";
     var weatherPanel = "<div class='row' id='weatherRow'><div class='col-md-4'><div class='panel panel-info'><div class='panel-heading'>Weather</div><div class='panel-body'><p class='weather icon'></p></div></div></div></div>";
-    $.ajax({
-      url: "http://api.wunderground.com/api/8fb6aeab97ba391c/forecast/q/"+state+"/"+city+".json"
+    $.jsonp({
+      url: weatherUrl
     }).done(function(data) {
       $('#weatherShit').append(weatherPanel);
       var weather = data.forecast.simpleforecast.forecastday;
