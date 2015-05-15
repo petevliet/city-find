@@ -24,5 +24,8 @@ $(function(){
     getPhotos.cityPhotos();
     $('#modal').modal('toggle');
     $('#mainButton').text('Another Search');
+    $('html, body').animate({
+        scrollTop: $("#cityResults").offset().top
+    }, 1000);
   });
 });
